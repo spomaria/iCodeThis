@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my-wallet</title>
+
+    <style>
+        body{
+            margin: 0;
+        }
+
+        .main-container{
+            margin: 5% 30%;
+            background-color: violet;
+            color: whitesmoke;
+            font-weight: 400;
+            font-size: 1.5vw;
+            padding: 3%;
+            box-shadow: 2px 2px 2px 2px plum;
+        }
+
+        .navbar{
+            display: flex;
+            gap: 2vw;
+            padding-top: 1vw;
+            padding-bottom: 5vw;
+            justify-content: center;
+        }
+
+        .menu{
+            display: inline-block;
+        }
+
+        .bar1, .bar2, .bar3{
+            width: 2vw;
+            height: 0.2vw;
+            background-color: whitesmoke;
+            margin: .4vw 0;
+            transition: 0.4s;
+        }
+
+        p{
+            text-align: center;
+            font-size: 2vw;
+            font-weight: 700;
+        }
+
+        .details{
+            display: flex;
+            gap: 5vw;
+            justify-content: center;
+            padding-top: 2vw;
+        }
+
+        a{
+            text-decoration: none;
+            color: whitesmoke;
+        }
+
+        .change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <section class="header">
+            <div class="navbar">
+                <a href="" id="menu">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </a>
+                <a href="" id="summary">Summary</a>
+                <a href="" id="activity">Activity</a>
+                <a href="" id="send">Send/Request</a>
+                </div>
+            <p>YOUR BALLANCE <br> <span id="balance">242.53 USD</span></p>
+
+            <div class="details">
+                <a href="" id="pending">PENDING</a>
+                <a href="" id="completed">COMPLETED</a>
+                <!-- <div id="pending">PENDING</div>
+                <div id="completed">COMPLETED</div> -->
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
+<script>
+    let menu = document.getElementsByClassName("menu");
+    document.getElementsByClassName("menu").addEventListener("click", function(){
+        menuTransform(menu);
+    });
+
+    function menuTransform(x){
+        x.classList.toggle("change");
+    }
+</script>

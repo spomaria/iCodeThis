@@ -7,60 +7,31 @@
     <style>
         body{
             background-color: #ad184f;
-            /* background: repeating-linear-gradient(to bottom,
-            #0000 0 100px, #ffa94d 0 102px +2px here
-            ); */
-            /* width: 50%; */
+            /* background-image: linear-gradient(to bottom left, #eb4be0, #f34786); */
             margin: 0 30%;
             font-size: 1.2vw;
+        }
+
+        @media screen and (max-width: 450px) {
+            body{
+                margin: 0;
+            }
         }
 
         #main-container{
             display: grid; 
             grid-template-columns: auto;
             border: solid #ad184f 2px;
-            /* place-items: center; */
             margin-top: 5%;
             box-shadow: 2px 2px 2px 2px #ebe5d9;
         }
 
-        #nav, #sub-total{
-            padding: 5%;
-        }
-
-        /* #item-details, #cont3, #cont4{
-            padding: 0 5%;
-            width: inherit;
-        }
-         */
-        #item-details{
-            display: grid;
-            grid-template-columns: auto auto auto;
-            padding: 2vw;
-            column-gap: 0.5vw;
-            row-gap: 1vw;
-            
-            /* gap: 2vw; */
-            /* justify-content: space-between; */
-            background-color: #ebe5d9;
-            border-top: solid gray 0.5px;
-            /* margin-right: 20px; */
-        }
-
-
-        /* #item-details, #cont3, #cont4, #sub-total{
+        #nav{
             display: flex;
-            gap: 2vw;
-            justify-content: space-between;
-            background-color: #ebe5d9;
-            border-top: solid gray 0.5px;
-            margin-right: 20px;
-        } */
-
-        /* #nav, #item-details, #cont3, #cont4, #sub-total{
-            align-items: center;
-            align-content: center;
-        } */
+            flex-direction: row;
+            justify-content: space-evenly;
+            justify-items: flex-end;
+        }
 
         #nav a{
             text-decoration: none;
@@ -68,11 +39,47 @@
             text-align: center;
         }
 
+        #nav, #sub-total{
+            padding: 5%;
+        }
+
+        .menu{
+            display: inline-block;
+        }
+
+        .bar1, .bar2, .bar3{
+            width: 2vw;
+            height: 0.2vw;
+            background-color: whitesmoke;
+            margin: .4vw 0;
+            transition: 0.4s;
+        }
+
+        #item-details{
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+            padding: 2vw;
+            column-gap: 0.1vw;
+            row-gap: 1vw;
+            justify-items: center;
+            background-color: #ebe5d9;
+            border-top: solid gray 0.5px;
+        }
+
+        #pic-space{
+            grid-row-end: span 2;
+        }
+        
+        .a-left{
+            grid-column-end: span 3;
+            justify-items: left;
+        }
+
         #sub-total{
             display: grid;
             grid-template-columns: auto auto auto;
             background-color: #ebe5d9;
-            text-align: center;
+            text-align: right;
         }
 
         #add-to-cart{
@@ -83,19 +90,9 @@
         }
 
         img{
-            height: 5vw;
-            width: 2vw;
+            height: 6vw;
+            width: 3vw;
             object-fit: contain;
-        }
-
-        .a-left{
-            justify-items: left;
-        }
-
-        .more-details{
-            display: grid;
-            grid-template-columns: auto auto auto;
-            gap: 1vw;
         }
 
         #desc{
@@ -115,51 +112,53 @@
     <div id="main-container">
         <div id="nav">
             <a href="">My Cart</a>
+            <a href="" id="menu">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </a>
         </div>
         <div id="item-details">
-            <div>
+            <div id="pic-space">
                 <img src="https://www.iphonelife.com/sites/iphonelife.com/files/styles/2023_iphone14pro_642_2x/public/image0_7.jpeg?itok=qeu8VH-y" alt=""> 
             </div>
-            <div class="more-details">
-                <div class="a-left" id="desc">
-                    Apple iPhone SE 16GB Silver
-                </div>
-                <div id="phone-qty">1</div>
-                <div><button id="phone-decr"> - </button></div>
-                <div><button id="phone-incr"> + </button></div>
-                
+        
+            <div class="a-left" id="desc">
+                Apple iPhone SE 16GB Silver
             </div>
+            <div></div>
+            <div id="phone-qty">1</div>
+            <div><button id="phone-decr"> - </button></div>
+            <div><button id="phone-incr"> + </button></div>
+            
             <div id="phone-price">$429.95</div>
-        <!-- </div>
-        <div id="cont3">  -->
-            <div>
+        
+            <div id="pic-space">
                 <img src="https://www.iphonelife.com/sites/iphonelife.com/files/styles/2023_iphone14pro_642_2x/public/image0_7.jpeg?itok=qeu8VH-y" alt=""> 
             </div>
-            <div class="more-details">
-                <div class="a-left" id="desc">
-                    iPhone SE Case
-                </div>
-                <div id="phone-case-qty">1</div>
-                <div><button id="phone-case-decr"> - </button></div>
-                <div><button id="phone-case-incr"> + </button></div>
-                
+            
+            <div class="a-left" id="desc">
+                iPhone SE Case
             </div>
+            <div></div>
+            <div id="phone-case-qty">1</div>
+            <div><button id="phone-case-decr"> - </button></div>
+            <div><button id="phone-case-incr"> + </button></div>
+            
             <div id="phone-case-price">$7.95</div>
-        <!-- </div>
-
-        <div id="cont4"> -->
-            <div>
+        
+            <div id="pic-space">
                 <img src="https://www.iphonelife.com/sites/iphonelife.com/files/styles/2023_iphone14pro_642_2x/public/image0_7.jpeg?itok=qeu8VH-y" alt=""> 
             </div>
-            <div class="more-details">
-                <div class="a-left" id="desc">
-                    iPhone SE Screen Protector
-                </div>
-                <div id="phone-protect-qty">1</div>
-                <div ><button id="phone-protect-decr"> - </button></div>
-                <div><button id="phone-protect-incr"> + </button></div>
-                
+            
+            <div class="a-left" id="desc">
+                iPhone SE Screen Protector
             </div>
+            <div></div>
+            <div id="phone-protect-qty">1</div>
+            <div ><button id="phone-protect-decr"> - </button></div>
+            <div><button id="phone-protect-incr"> + </button></div>
+            
             <div id="phone-protect-price">$4.95</div>
         </div>
         <div id="add-to-cart">
@@ -196,7 +195,6 @@
     function decrPhone(){
         if(Number(document.getElementById("phone-qty").innerHTML) > 0){
             document.getElementById("phone-qty").innerHTML = Number(document.getElementById("phone-qty").innerHTML) - 1;
-            // return document.getElementById("phone-qty").innerHTML;
         }
         return document.getElementById("phone-qty").innerHTML;
         
@@ -259,13 +257,9 @@
 
     var cartAmount = phoneQty * phonePrice + phoneCasePrice * phoneCaseQty + phoneProtectPrice * phoneProtectQty;
     
-    // function cartAmount(){
-    //     Number(document.getElementById("phone-qty").innerHTML) * Number(document.getElementById("phone-price").innerHTML.substring(1)) +
-    //     Number(document.getElementById("phone-case-qty").innerHTML) * Number(document.getElementById("phone-case-price").innerHTML.substring(1)) +
-    //     Number(document.getElementById("phone-protect-qty").innerHTML) + Number(document.getElementById("phone-protect-price").innerHTML.substring(1));
-    // }
     document.getElementById("cart-amount").innerHTML = '$'+cartAmount.toFixed(2);
     
+
     // To calculate a new total after quantities are changed
     document.getElementById("add-to-cart").addEventListener("click", function(){
         cartTotal();
