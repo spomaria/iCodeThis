@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my-first-animation</title>
+
+    <style>
+        body{
+            font-family: sans-serif;
+            background: #070606e8;
+            background-image: url(http://photoshopdesire.com/wp-content/uploads/2016/02/day2night-after-photoshop.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container{
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .flake{
+            color: rgb(247, 252, 243);
+            font-size: 2rem;
+            padding: 1rem;
+            animation: fall 2s linear forwards infinite;
+            animation-delay: 1s;
+        }
+
+        /* animating snowflake in Y-axis */
+
+        @keyframes fall{
+            from{
+                transform: translateY(-10vh);
+            }
+            to{
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <i class="wi wi-snowflake-cold flake"></i>
+        <a href="https://reactgo.com/css-snow-animation/" target="_blank" class="master">View Tutorial</a>
+    </div>
+</body>
+</html>
+
+<script>
+    const flake = document.querySelector(".flake");
+    const container = document.querySelector(".container");
+
+    function createFlake(){
+        // cloning the flake node
+        const clone = flake.cloneNode(true);
+
+        // creating left padding
+        clone.style.paddingLeft = Math.random() * 10 + "px";
+
+        // animation duration between 3-5
+        clone.style.animationDuration = Math.random() *5 + 3 + "s";
+        clone.style.opacity = Math.random() * 1;
+        container.append(clone); //adding clone flake to container
+    }
+
+    //  to create more flakes decrease 100
+    const s = setInterval(createFlake, 100);
+
+    setTimeout(() => {
+        clearInterval(s);
+    }, 3000); // flake creation stops after 3000 milliseconds or 3s
+</script>

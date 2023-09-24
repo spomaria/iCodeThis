@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shopping_cart_by_spomaria</title>
+    <style>
+        body{
+            background-color: #ad184f;
+            /* background: repeating-linear-gradient(to bottom,
+            #0000 0 100px, #ffa94d 0 102px +2px here
+            ); */
+            /* width: 50%; */
+            margin: 0 30%;
+            font-size: 1.2vw;
+        }
+
+        #main-container{
+            display: grid; 
+            grid-template-columns: auto;
+            border: solid #ad184f 2px;
+            /* place-items: center; */
+            margin-top: 5%;
+            box-shadow: 2px 2px 2px 2px #ebe5d9;
+        }
+
+        #nav, #sub-total{
+            padding: 5%;
+        }
+
+        /* #item-details, #cont3, #cont4{
+            padding: 0 5%;
+            width: inherit;
+        }
+         */
+        #item-details{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            padding: 2vw;
+            column-gap: 0.5vw;
+            row-gap: 1vw;
+            
+            /* gap: 2vw; */
+            /* justify-content: space-between; */
+            background-color: #ebe5d9;
+            border-top: solid gray 0.5px;
+            /* margin-right: 20px; */
+        }
+
+
+        /* #item-details, #cont3, #cont4, #sub-total{
+            display: flex;
+            gap: 2vw;
+            justify-content: space-between;
+            background-color: #ebe5d9;
+            border-top: solid gray 0.5px;
+            margin-right: 20px;
+        } */
+
+        /* #nav, #item-details, #cont3, #cont4, #sub-total{
+            align-items: center;
+            align-content: center;
+        } */
+
+        #nav a{
+            text-decoration: none;
+            color: aliceblue;
+            text-align: center;
+        }
+
+        #sub-total{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            background-color: #ebe5d9;
+            text-align: center;
+        }
+
+        #add-to-cart{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            background-color: #ebe5d9;
+            text-align: center;
+        }
+
+        img{
+            height: 5vw;
+            width: 2vw;
+            object-fit: contain;
+        }
+
+        .a-left{
+            justify-items: left;
+        }
+
+        .more-details{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 1vw;
+        }
+
+        #desc{
+            grid-column-end: span 3;
+        }
+
+        button{
+            padding: 0.5vw 1vw;
+            background-color: #ad184f;
+            color: #ebe5d9;
+            border-radius: 10px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-container">
+        <div id="nav">
+            <a href="">My Cart</a>
+        </div>
+        <div id="item-details">
+            <div>
+                <img src="https://www.iphonelife.com/sites/iphonelife.com/files/styles/2023_iphone14pro_642_2x/public/image0_7.jpeg?itok=qeu8VH-y" alt=""> 
+            </div>
+            <div class="more-details">
+                <div class="a-left" id="desc">
+                    Apple iPhone SE 16GB Silver
+                </div>
+                <div id="phone-qty">1</div>
+                <div><button id="phone-decr"> - </button></div>
+                <div><button id="phone-incr"> + </button></div>
+                
+            </div>
+            <div id="phone-price">$429.95</div>
+        <!-- </div>
+        <div id="cont3">  -->
+            <div>
+                <img src="https://www.iphonelife.com/sites/iphonelife.com/files/styles/2023_iphone14pro_642_2x/public/image0_7.jpeg?itok=qeu8VH-y" alt=""> 
+            </div>
+            <div class="more-details">
+                <div class="a-left" id="desc">
+                    iPhone SE Case
+                </div>
+                <div id="phone-case-qty">1</div>
+                <div><button id="phone-case-decr"> - </button></div>
+                <div><button id="phone-case-incr"> + </button></div>
+                
+            </div>
+            <div id="phone-case-price">$7.95</div>
+        <!-- </div>
+
+        <div id="cont4"> -->
+            <div>
+                <img src="https://www.iphonelife.com/sites/iphonelife.com/files/styles/2023_iphone14pro_642_2x/public/image0_7.jpeg?itok=qeu8VH-y" alt=""> 
+            </div>
+            <div class="more-details">
+                <div class="a-left" id="desc">
+                    iPhone SE Screen Protector
+                </div>
+                <div id="phone-protect-qty">1</div>
+                <div ><button id="phone-protect-decr"> - </button></div>
+                <div><button id="phone-protect-incr"> + </button></div>
+                
+            </div>
+            <div id="phone-protect-price">$4.95</div>
+        </div>
+        <div id="add-to-cart">
+            <div></div>
+            <div><button>Add to Cart</button></div>
+            <div></div> 
+        </div>
+        <div id="sub-total">
+            <div></div>
+            <div>SUB-TOTAL</div>
+            <div id="cart-amount"></div> 
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+        
+    // Incrementing the phone quantity by adding event listener
+    document.getElementById("phone-incr").addEventListener("click", function(){
+        incrPhone();
+    });
+
+    function incrPhone(){
+        document.getElementById("phone-qty").innerHTML = Number(document.getElementById("phone-qty").innerHTML) + 1;
+        return document.getElementById("phone-qty").innerHTML;
+    }
+
+    // Decrementing the phone quantity by adding event listener
+    document.getElementById("phone-decr").addEventListener("click", function(){
+        decrPhone();
+    });
+
+    function decrPhone(){
+        if(Number(document.getElementById("phone-qty").innerHTML) > 0){
+            document.getElementById("phone-qty").innerHTML = Number(document.getElementById("phone-qty").innerHTML) - 1;
+            // return document.getElementById("phone-qty").innerHTML;
+        }
+        return document.getElementById("phone-qty").innerHTML;
+        
+    }
+
+    // Incrementing the phone case quantity by adding event listener
+    document.getElementById("phone-case-incr").addEventListener("click", function(){
+        incrPhoneCase();
+    });
+
+    function incrPhoneCase(){
+        document.getElementById("phone-case-qty").innerHTML = Number(document.getElementById("phone-case-qty").innerHTML) + 1;
+        return document.getElementById("phone-case-qty").innerHTML;
+    }
+
+    // Decrementing the phone case quantity by adding event listener
+    document.getElementById("phone-case-decr").addEventListener("click", function(){
+        decrPhoneCase();
+    });
+
+    function decrPhoneCase(){
+        if(Number(document.getElementById("phone-case-qty").innerHTML) > 0){
+            document.getElementById("phone-case-qty").innerHTML = Number(document.getElementById("phone-case-qty").innerHTML) - 1;
+        }
+        return document.getElementById("phone-case-qty").innerHTML;
+    }
+
+    // Incrementing the phone protector quantity by adding event listener
+    document.getElementById("phone-protect-incr").addEventListener("click", function(){
+        incrPhoneProtect();
+    });
+
+    function incrPhoneProtect(){
+        document.getElementById("phone-protect-qty").innerHTML = Number(document.getElementById("phone-protect-qty").innerHTML) + 1;
+        return document.getElementById("phone-protect-qty").innerHTML;
+    }
+
+    // Decrementing the phone protector quantity by adding event listener
+    document.getElementById("phone-protect-decr").addEventListener("click", function(){
+        decrPhoneProtect();
+    });
+
+    function decrPhoneProtect(){
+        if(Number(document.getElementById("phone-protect-qty").innerHTML) > 0){
+            document.getElementById("phone-protect-qty").innerHTML = Number(document.getElementById("phone-protect-qty").innerHTML) - 1;
+        }
+        return document.getElementById("phone-protect-qty").innerHTML;
+    }
+
+    // Calculating the total amount for the cart
+    var phoneQty = Number(document.getElementById("phone-qty").innerHTML);
+    var phonePrice = Number(document.getElementById("phone-price").innerHTML.substring(1));
+
+    var phoneCaseQty = Number(document.getElementById("phone-case-qty").innerHTML);
+    var phoneCasePrice = Number(document.getElementById("phone-case-price").innerHTML.substring(1));
+
+    var phoneProtectQty = Number(document.getElementById("phone-protect-qty").innerHTML);
+    var phoneProtectPrice = Number(document.getElementById("phone-protect-price").innerHTML.substring(1));
+
+
+    var cartAmount = phoneQty * phonePrice + phoneCasePrice * phoneCaseQty + phoneProtectPrice * phoneProtectQty;
+    
+    // function cartAmount(){
+    //     Number(document.getElementById("phone-qty").innerHTML) * Number(document.getElementById("phone-price").innerHTML.substring(1)) +
+    //     Number(document.getElementById("phone-case-qty").innerHTML) * Number(document.getElementById("phone-case-price").innerHTML.substring(1)) +
+    //     Number(document.getElementById("phone-protect-qty").innerHTML) + Number(document.getElementById("phone-protect-price").innerHTML.substring(1));
+    // }
+    document.getElementById("cart-amount").innerHTML = '$'+cartAmount.toFixed(2);
+    
+    // To calculate a new total after quantities are changed
+    document.getElementById("add-to-cart").addEventListener("click", function(){
+        cartTotal();
+    });
+
+    function cartTotal(){
+        var newCartAmount = Number(document.getElementById("phone-qty").innerHTML) * Number(document.getElementById("phone-price").innerHTML.substring(1)) +
+        Number(document.getElementById("phone-case-qty").innerHTML) * Number(document.getElementById("phone-case-price").innerHTML.substring(1)) +
+        Number(document.getElementById("phone-protect-qty").innerHTML) * Number(document.getElementById("phone-protect-price").innerHTML.substring(1));
+        document.getElementById("cart-amount").innerHTML = '$'+newCartAmount.toFixed(2);
+    }
+
+</script>
