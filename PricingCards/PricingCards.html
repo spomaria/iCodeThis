@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing-Cards-By-Spomaria</title>
+    <link rel="stylesheet" href="./PricingCards.css">
+</head>
+<body>
+    <div class="main">
+        <div class="basic purchase-card">
+            <h5>BASIC</h5>
+            <h1>100GB</h1>
+            <p>1 month, then $1,7/month</p>
+            <br>
+            <button id="basic">Purchase</button>
+            <br> <br>
+            <ul>
+                <li> &#10003 100GB storage</li>
+                <li> &#10003 Option to add members</li>
+                <li> &#10003 Extra member benefits</li>
+            </ul>
+        </div>
+        <div class="standard purchase-card">
+            <h5>STANDARD</h5>
+            <h1>200GB</h1>
+            <p>1 month, then $2,9/month</p>
+            <br>
+            <button id="standard">Purchase</button>
+            <br> <br>
+            <ul>
+                <li> &#10003 200GB storage</li>
+                <li> &#10003 Option to add members</li>
+                <li> &#10003 Extra member benefits</li>
+            </ul>
+        </div>
+        <div class="premium purchase-card">
+            <h5>PREMIUM</h5>
+            <h1>2TB</h1>
+            <p>1 month, then $8,9/month</p>
+            <br>
+            <button id="premium popupForm" onclick="openForm()">Purchase</button>
+            <br> <br>
+            <ul>
+                <li> &#10003 2TB storage</li>
+                <li> &#10003 Option to add members</li>
+                <li> &#10003 Extra member benefits</li>
+            </ul>
+        </div>
+
+        <!-- The Pop up form for payment -->
+        <div class="loginPopup">
+            <div class="formPopup" id="popupForm">
+              <form action="/action_page.php" class="formContainer">
+                <h2>Please Log in</h2>
+                <label for="email">
+                  <strong>E-mail</strong>
+                </label>
+                <input type="text" id="email" placeholder="Your Email" name="email" required>
+                <label for="psw">
+                  <strong>Password</strong>
+                </label>
+                <input type="password" id="psw" placeholder="Your Password" name="psw" required>
+                <button type="submit" class="btn">Log in</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+              </form>
+            </div>
+        </div>
+    </div>
+    <script src="./PricingCards.js"></script>
+</body>
+</html>

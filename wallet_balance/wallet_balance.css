@@ -1,0 +1,120 @@
+body{
+    margin: 0;
+}
+
+.main-container{
+    margin: 5% 25%;
+    background-color: violet;
+    color: whitesmoke;
+    font-weight: 400;
+    font-size: 1.5vw;
+    padding: 3%;
+    box-shadow: 2px 2px 2px 2px plum;
+    border-radius: 1.3vw;
+}
+
+.header{
+    background-color: violet;
+    margin: 0;
+}
+
+.navbar{
+    display: flex;
+    gap: 2vw;
+    padding-top: 1vw;
+    padding-bottom: 5vw;
+    justify-content: center;
+}
+
+.menu{
+    display: inline-block;
+}
+
+.bar1, .bar2, .bar3{
+    width: 2vw;
+    height: 0.2vw;
+    background-color: whitesmoke;
+    margin: .4vw 0;
+    transition: 0.4s;
+}
+
+
+p{
+    text-align: center;
+    font-size: 1.4vw;
+    
+}
+
+#balance{
+    font-size: 2.2vw;
+    font-weight: 700;
+}
+
+.details{
+    display: flex;
+    gap: 10vw;
+    justify-content: center;
+    padding: 2vw;
+}
+
+a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.pending-sect{
+    color: black;
+    font-size: .7vw;
+    font-weight: 300;
+    background-color: whitesmoke;
+    margin: 0 -3vw -3vw -3vw;
+    text-align: left;
+    padding: 3% 5%;
+}
+
+
+.pending-sect p{
+    text-align: left;
+    font-size: 1.2vw;
+    font-weight: 400;
+}
+
+
+.btn-group button {
+    background-color: whitesmoke; /* Green background */
+    border: .2vw solid violet; /* Green border */
+    color: black; /* White text */
+    padding: .6vw 1.2vw; /* Some padding */
+    float: left; /* Float the buttons side by side */
+    font-size: 1vw;
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+.btn-group button:first-child {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.btn-group button:last-child {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+  /* Clear floats (clearfix hack) */
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color: violet;
+  }
+
+  #bold{
+    font-weight: 700;
+  }

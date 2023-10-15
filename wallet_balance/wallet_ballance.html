@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my-wallet</title>
+    <link rel="stylesheet" href="./wallet_balance.css">
+</head>
+<body>
+    <div class="main-container">
+        <section class="header">
+            <div class="navbar">
+                <a href="" id="menu">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </a>
+                <a href="" id="summary">Summary</a>
+                <a href="" id="activity">Activity</a>
+                <a href="" id="send">Send/Request</a>
+                </div>
+            <p>YOUR BALLANCE <br> <span id="balance">242.53 USD</span></p>
+
+            <div class="details">
+                <a href="" id="pending">PENDING</a>
+                <a href="" id="completed">COMPLETED</a>
+                
+            </div>
+        </section>
+        <section class="pending-sect">
+            <div>
+                <p><span id="bold">Company Inc.</span> <br>
+                    Payment Request for 280,00 CAD sent
+                </p>
+                <p>Company Inc. hasn't paid yet</p>
+                <div class="btn-group">
+                    <button>Send a Reminder</button>
+                    <button>Edit Amount</button>
+                    <button>Cancel</button>
+                </div>
+            </div>
+            <div>
+                <p><span id="bold">Company Inc.</span> <br>
+                    Payment Request for 356,00 USD sent
+                </p>
+                <p>Company Inc. hasn't paid yet</p>
+                <div class="btn-group">
+                    <button>Send a Reminder</button>
+                    <button>Edit Amount</button>
+                    <button>Cancel</button>
+                </div>
+            </div>
+            <div>
+                <p><span id="bold">Company Inc.</span> <br>
+                    Payment Request for 677,00 USD sent
+                </p>
+                <p>Company Inc. hasn't paid yet</p>
+                <div class="btn-group">
+                    <button>Send a Reminder</button>
+                    <button>Edit Amount</button>
+                    <button>Cancel</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
+<script>
+    let menu = document.getElementsByClassName("menu");
+    document.getElementsByClassName("menu").addEventListener("click", function(){
+        menuTransform(menu);
+    });
+
+    function menuTransform(x){
+        x.classList.toggle("change");
+    }
+</script>
