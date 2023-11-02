@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    background-color: rgb(33, 32, 32);
+}
+
+.main-grid{
+    margin: 5% 20%;
+    display: grid;
+    grid-template-columns: repeat(2,45%);
+    column-gap: 2vw;
+}
+
+.cont{
+    padding: 2vw;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px aliceblue;
+}
+
+.cont:hover{
+    box-shadow: 0 2px 2px 2px green;
+    /* This increases the box size on hover */
+    transform: scale(1.05); 
+}
+
+.cont-col{
+    background-color: aliceblue;
+}
+.img-icon{
+    height: 2vw;
+}
+
+button:hover{
+    color: green;
+}
+
+button{
+    
+    font-size: 2vw;
+    border: none;
+}
+
+.auth-title{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4vw;
+}
+
+.review-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5vw;
+    font-size: 1.3vw;
+}
+
+img{
+    object-fit: cover;
+    width: 100%;
+}
